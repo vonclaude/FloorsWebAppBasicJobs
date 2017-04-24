@@ -1,0 +1,28 @@
+body {
+	background: #DDDFB0;
+}
+md-content {
+	background: #DDDFB0;
+	color: #24140E;
+}
+div#menu {
+	background: #24140E;
+	color: #DDDFB0;
+}
+td {
+	vertical-align: top;
+	width: 400px;
+}
+ul.skills {
+	list-style-image: url('../image/sword_icon_12.png');
+	width: 800px;
+}
+.skills > li {
+	font-weight: bold;
+}
+li > p {
+	margin-top: 0px;
+	margin-left: 20px;
+	margin-bottom: 5px;
+	font-weight: normal;
+}

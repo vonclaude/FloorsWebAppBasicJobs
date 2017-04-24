@@ -1,0 +1,77 @@
+<html lang="en" >
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+</head>
+
+<body ng-app="job" ng-controller="JobCtrl" ng-cloak>
+	<md-toolbar>
+		<div class="md-toolbar-tools" id="menu">
+			<h1>
+				<span>Floors: Basic Classes</span>
+			</h1>
+			<span flex></span>
+		</div>
+	</md-toolbar>
+	<md-nav-bar 
+		md-selected-nav-item="currentNavItem" 
+		nav-bar-aria-label="navigation links">
+		<md-nav-item md-nav-click="changeJob('knight')" name="knight">
+			Knight
+		</md-nav-item>
+		<md-nav-item md-nav-click="changeJob('guide')" name="guide">
+			Guide
+		</md-nav-item>
+		<md-nav-item md-nav-click="changeJob('mage')" name="mage">
+			Mage
+		</md-nav-item>
+		<md-nav-item md-nav-click="changeJob('militia')" name="militia">
+			Militia
+		</md-nav-item>
+		<md-nav-item md-nav-click="changeJob('rogue')" name="rogue">
+			Rogue
+		</md-nav-item>
+		<md-nav-item md-nav-click="changeJob('hunter')" name="hunter">
+			Hunter
+		</md-nav-item>
+	</md-nav-bar>
+	<md-content>
+		<h1>{{currentJob.name}}</h1>
+		<table cellpadding="5">
+			<tr>
+				<td><img id="card" src={{currentJob.cardURL}}></td>
+				<td><h2>Equipment</h2>
+					<b>Main:</b> {{currentJob.mainHand}}<br />
+					<b>Offhand:</b> {{currentJob.offhand}}<br />
+					<b>Gear:</b> {{currentJob.gear}}<br />
+					<b>Bag:</b>
+					<ul>
+						<li ng-repeat="x in currentJob.bag track by $index">{{x}}</li>
+					</ul>
+					<b>Ammo:</b> {{currentJob.ammo}}<br />
+					<b>Innate:</b> {{currentJob.innate}}<br />
+				</td>
+			</tr>
+		</table>
+		<h2>Skills</h2>
+		<ul class="skills" ng-repeat="y in currentJob.skills track by $index">
+			<li>{{y.name}}
+				<p>{{y.description}}</p>
+			</li>
+		</ul>
+		<font size="2">All images on this site created by, or derived from images created by, Pio Canlas.</font>
+	</md-content>  
+  
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+	<script src="script/job.module.js"></script>
+	<script src="script/job.controller.js"></script>
+  
+</body>
+</html>
