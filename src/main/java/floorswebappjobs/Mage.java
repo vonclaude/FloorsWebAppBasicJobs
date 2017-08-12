@@ -1,7 +1,7 @@
 package floorswebappjobs;
 
 /**
- * Created by Colin on 4/22/2017.
+ * Created by vonclaude on 4/22/2017.
  */
 public class Mage extends Job{
 
